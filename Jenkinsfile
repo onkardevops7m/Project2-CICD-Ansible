@@ -9,7 +9,7 @@ pipeline
        stage ('clone')
     {
         steps{
-        git 'https://github.com/onkardevops7m/Project2-CICD-Ansible.git'
+        git 'https://github.com/onkardevops7m/webapp.git'
              }
     }
 
