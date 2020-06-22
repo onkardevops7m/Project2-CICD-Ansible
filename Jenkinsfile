@@ -16,6 +16,8 @@ pipeline
        stage ('build')
     {
         steps{
+          
+        sh label: '', script: 'cd Project2-CICD-Ansible'
         sh label: '', script: 'mvn clean package'
              }
     }
