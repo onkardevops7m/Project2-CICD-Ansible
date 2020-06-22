@@ -1,0 +1,9 @@
+---
+
+- hosts: test
+
+  tasks:
+          - name: copying webapp into the tomcat server
+            copy:
+                    src: /root/mvn-hello-world.war
+                    dest: /opt/apache-tomcat-8.5.42/webapps/app1.war
