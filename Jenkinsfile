@@ -23,13 +23,12 @@ pipeline
        stage ('deploy')
     {
         steps{
-        sshPublisher(publishers: [sshPublisherDesc(configName: 'Ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''ansible-galaxy install zaxos.tomcat-ansible-role
-cd /root/.ansible/roles/
+        sshPublisher(publishers: [sshPublisherDesc(configName: 'Ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''cd /root/.ansible/roles/
+ansible-galaxy install zaxos.tomcat-ansible-role
 rm -rf Project2-CICD-Ansible
 git clone https://github.com/onkardevops7m/Project2-CICD-Ansible.git
-cd Project2-CICD-Ansible/
-ansible-playbook tomcat_install.yml
-ansible-playbook app_deploy.yml''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//root', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'target/mvn-hello-world.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+ansible-playbook Project2-CICD-Ansible/tomcat_install.yml
+ansible-playbook Project2-CICD-Ansible/app_deploy.yml''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//root/', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'target/mvn-hello-world.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
              }
     }
      
