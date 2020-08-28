@@ -1,6 +1,6 @@
 ---
 
-- hosts: prod
+- hosts: qa
 
   roles:
           - zaxos.tomcat-ansible-role
