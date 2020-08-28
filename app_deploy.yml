@@ -1,6 +1,6 @@
 ---
 
-- hosts: qa
+- hosts: prod
 
   tasks:
           - name: copying webapp into the tomcat server
